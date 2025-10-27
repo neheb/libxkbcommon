@@ -362,7 +362,7 @@ UpdateDerivedKeymapFields(struct xkb_keymap *keymap)
      *   key entries without overlap with the alias entries.
      * - In the unlikely event that this is not the case, we need to realloc.
      */
-#ifdef _MSC_VER
+#ifdef _WIN32
     /* MSVC does not pack bit fields as efficiently as GCC and Clang */
     static_assert(sizeof(struct xkb_key_alias) == sizeof(KeycodeMatch), "");
 #else
